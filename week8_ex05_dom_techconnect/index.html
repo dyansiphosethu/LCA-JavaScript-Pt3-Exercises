@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechConnect Developer Hub</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container py-4">
+      <h1 class="text-center mb-4">TechConnect Developer Community Hub</h1>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Search developers..."
+          />
+        </div>
+
+        <div class="col-md-3">
+          <button id="toggleViewBtn" class="btn btn-primary">
+            Switch View
+          </button>
+        </div>
+
+        <div class="col-md-3 text-end">
+          <h5>
+            Developers:
+            <span id="developerCount">0</span>
+          </h5>
+        </div>
+      </div>
+
+      <div class="card p-3 mb-4">
+        <h3>Add Developer</h3>
+
+        <form id="developerForm">
+          <input
+            type="text"
+            id="name"
+            class="form-control mb-2"
+            placeholder="Developer Name"
+          />
+
+          <input
+            type="text"
+            id="role"
+            class="form-control mb-2"
+            placeholder="Role"
+          />
+
+          <input
+            type="text"
+            id="skills"
+            class="form-control mb-2"
+            placeholder="Skills (comma separated)"
+          />
+
+          <input
+            type="text"
+            id="location"
+            class="form-control mb-2"
+            placeholder="Location"
+          />
+
+          <button type="submit" class="btn btn-success">Add Developer</button>
+
+          <div id="formError" class="text-danger mt-2"></div>
+        </form>
+      </div>
+
+      <div id="cardView" class="row"></div>
+
+      <div id="tableView" class="d-none">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Location</th>
+              <th>Skills</th>
+              <th>Hire Status</th>
+            </tr>
+          </thead>
+
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
